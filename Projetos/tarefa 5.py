@@ -1,10 +1,5 @@
-senha_magica = "abracadabra"
-
-while True:
-    senha = input("Digite a senha: ")
-    if senha != senha_magica:
-        print("Senha incorreta! Tente novamente.")
-        continue  # Solicita novamente
-    else:
-        print("Acesso concedido!")
-    break
+poder = int(input("Digite seu poder de ataque: "))
+if poder < 50:
+    print("Seu poder de ataque é fraco.")
+else:
+    print("Você é um vingador supremo!")

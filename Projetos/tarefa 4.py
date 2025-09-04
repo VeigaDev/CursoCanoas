@@ -1,7 +1,8 @@
-temperatura = float(input("Digite a temperatura em Celsius: "))
-if temperatura >= 25:
-    print("Está quente, use roupas leves.")
-elif 15 <= temperatura < 25:
-    print("O clima está agradável, aproveite o dia!")
+idade = int(input("Digite sua idade: "))
+classificacao_indicativa = int(input("Digite a classificação indicativa do filme: "))
+if idade >= classificacao_indicativa:
+    print("Você pode assistir ao filme.")
+elif idade < classificacao_indicativa:
+    print("Você não pode assistir ao filme.")
 else:
-    print("Está frio, leve um casaco") 
+    print("Idade ou classificação indicativa inválida.")

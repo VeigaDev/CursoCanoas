@@ -1,8 +1,12 @@
-idade = int(input("Digite sua idade: "))
-classificacao_indicativa = int(input("Digite a classificação indicativa do filme: "))
-if idade >= classificacao_indicativa:
-    print("Você pode assistir ao filme.")
-elif idade < classificacao_indicativa:
-    print("Você não pode assistir ao filme.")
-else:
-    print("Idade ou classificação indicativa inválida.")
+import random
+
+random_number = random(1, 10)
+while True:
+    guess = int(input("Adivinhe o número entre 1 e 10: "))
+    if guess < random_number:
+        print("Muito baixo! Tente novamente.")
+    elif guess > random_number:
+        print("Muito alto! Tente novamente.")
+    else:
+        print("Parabéns! Você adivinhou o número!")
+        break

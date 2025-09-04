@@ -1,9 +1,12 @@
-num1 = int(input('Digite o número 1: '))
-num2 = int(input('Digite o número 2: '))
-
-if num1 > num2:
-    print(f'O número {num1} é maior que o número {num2}')
-elif num2 == num1:
-    print(f'O número {num2} é igual ao número {num1}')
+pontuacao = int(input('Digite a pontuação: '))
+if pontuacao < 0:
+    print("Pontuação inválida! Digite um valor positivo.")
+elif pontuacao <= 100:
+    print("Você é um iniciante!")
+elif pontuacao <= 500:
+    print("Você é um aventureiro experiente!")
+elif pontuacao <= 1000:
+    print("Você é um mestre da aventura!")
 else:
-    print(f'O número {num2} é maior que o número {num1}')
+    print("Você é uma lenda viva!")
+

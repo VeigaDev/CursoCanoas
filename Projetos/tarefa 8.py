@@ -1,12 +1,7 @@
-import random
-
-random_number = random(1, 10)
-while True:
-    guess = int(input("Adivinhe o número entre 1 e 10: "))
-    if guess < random_number:
-        print("Muito baixo! Tente novamente.")
-    elif guess > random_number:
-        print("Muito alto! Tente novamente.")
-    else:
-        print("Parabéns! Você adivinhou o número!")
-        break
+fruta = input('Digite o nome de uma fruta: ').lower()
+if fruta == 'banana':
+    print('A banana é uma das frutas mais consumidas no mundo!')
+elif fruta == 'morango':
+    print('O morango na verdade não é uma fruta e sim um pseudofruto!')
+else:
+    print('Não conheço essa fruta, mas tenho certeza que é deliciosa!')
