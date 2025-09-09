@@ -7,7 +7,7 @@ def home():
     return "Hello, World!"
 
 @app.route('/rpg/<nivel>')
-def about(nivel):
+def rpg(nivel):
     nivel = int(nivel)
     if nivel < 100:
         return "Novato"
