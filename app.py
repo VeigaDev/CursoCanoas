@@ -1,10 +1,19 @@
-from flask import Flask
-
+from flask import Flask, request
+import sys
+sys.path.append(r'c:\Users\03573005055\Documents\Projetos\Aula 5')
+from file import ping
 app = Flask(__name__)
 
-@app.route('/')
-def home():
-    return "Hello, World!"
+@app.route('/ping')
+def ping_route():
+    return ping()
+
+@app.route('/formulario' , methods=['POST'])
+def formulario():
+    nome = request.form.get('nome')
+    idade = request.form.get('idade')
+    endereco = request.form.get('endereco')
+    return f"Nome: {nome}, Idade: {idade}, Endereço: {endereco}"
 
 @app.route('/rpg/<nivel>')
 def rpg(nivel):
