@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 def forms():
     name = request.form.get('nome')
-    if not name or len(name) < 2:
+    if not name or len(name) < 3:
         return "Nome inválido! Deve ter pelo menos 3 caracteres."
     
     email = request.form.get('email')
