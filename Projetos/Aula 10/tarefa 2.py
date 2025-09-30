@@ -8,10 +8,14 @@ cursos = {
     103: {'professor': 'Charlie', 'curso': 'Data Science'},
 }
 
+@app.route('/')
+def home():
+    global cursos
+    return cursos
+
 @app.route('/curso', methods=['POST'])
 def adicionar_curso():
     global cursos
-    
     nome = request.form.get('professor')
     curso = request.form.get('curso')
     resposta = verifica_dados(nome, curso)
@@ -28,7 +32,7 @@ def adicionar_curso():
             }
         }
         cursos.update(curso)
-        return f"curso {nome} cadastrado com sucesso!"
+        return f"curso {curso} cadastrado com sucesso!"
 
 @app.route('/verCurso/<int:id>')
 def ver_cadastro(id):
@@ -42,8 +46,9 @@ def ver_cadastro(id):
 def alterar_cadastro(id):
     global cursos
     if id in cursos:
-        verifica_dados('professor', 'curso')
+        
         curso = cursos[id]
+        verifica_dados(request.form.get('professor'), request.form.get('curso'))
         curso["curso"] = request.form.get('curso')
         curso["professor"] = request.form.get('professor')
         return f"Dados atualizados com sucesso!\n {jsonify(curso)}"
